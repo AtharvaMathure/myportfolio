@@ -91,6 +91,13 @@
             border-bottom: 1px solid #282828;
             margin: 0px;
             padding: 20px 0px;
+
+            &__links {
+                color: var(--yellow-theme-main-color);
+                text-decoration: none;
+                padding: 0.5rem;
+                cursor: pointer; // Add this line
+            }
            
         }
         

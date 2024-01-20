@@ -1,33 +1,33 @@
 import React, { useState } from "react";
 import { FaBars, FaReact } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, animateScroll as scroll } from "react-scroll";
 import { HiX } from "react-icons/hi";
 import "./styles.scss";
 
 const data = [
   {
     label: "HOME",
-    to: "/",
+    to: "home", // Specify the ID of the section you want to scroll to
   },
   {
     label: "ABOUT",
-    to: "/about",
+    to: "about",
   },
   {
     label: "SKILLS",
-    to: "/skills",
+    to: "skills",
   },
   {
     label: "RESUME",
-    to: "/resume",
+    to: "resume",
   },
   {
     label: "PORTFOLIO",
-    to: "/portfolio",
+    to: "portfolio",
   },
   {
     label: "CONTACT",
-    to: "/contact",
+    to: "contact",
   },
 ];
 
@@ -37,11 +37,18 @@ const Navbar = () => {
   const handleToggleIcon = () => {
     setToggleIcon(!toggleIcon);
   };
+
   return (
     <div>
       <nav className="navbar">
         <div className="navbar__container">
-          <Link to={"/"} className="navbar__container__logo">
+          <Link
+            to="home"
+            spy={true}
+            smooth={true}
+            duration={500}
+            className="navbar__container__logo"
+          >
             <FaReact size={30} />
           </Link>
         </div>
@@ -53,6 +60,9 @@ const Navbar = () => {
               <Link
                 className="navbar__container__menu__item__links"
                 to={item.to}
+                spy={true}
+                smooth={true}
+                duration={500}
               >
                 {item.label}
               </Link>
@@ -66,4 +76,5 @@ const Navbar = () => {
     </div>
   );
 };
+
 export default Navbar;
