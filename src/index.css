@@ -6,6 +6,7 @@
    --yellow-theme-main-color : #ffdd40;
    --yellow-theme-sub-text-color : #ffffff;
    --yellow-theme-nav-background-color : #181818; 
+   --gradient-color: linear-gradient(45deg, #3498db, #e74c3c);
 }
 
 *{

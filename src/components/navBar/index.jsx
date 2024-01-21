@@ -1,13 +1,13 @@
+// Update your Navbar component
 import React, { useState } from "react";
 import { FaBars, FaReact } from "react-icons/fa";
-import { Link, animateScroll as scroll } from "react-scroll";
 import { HiX } from "react-icons/hi";
 import "./styles.scss";
 
 const data = [
   {
     label: "HOME",
-    to: "home", // Specify the ID of the section you want to scroll to
+    to: "home", // Replace with the ID of the section you want to scroll to
   },
   {
     label: "ABOUT",
@@ -42,30 +42,23 @@ const Navbar = () => {
     <div>
       <nav className="navbar">
         <div className="navbar__container">
-          <Link
-            to="home"
-            spy={true}
-            smooth={true}
-            duration={500}
-            className="navbar__container__logo"
-          >
+          <a href="#home" className="navbar__container__logo">
+            {/* Use the ID of the home section */}
             <FaReact size={30} />
-          </Link>
+          </a>
         </div>
         <ul
           className={`navbar__container__menu  ${toggleIcon ? "active" : ""}`}
         >
           {data.map((item, key) => (
             <li key={key} className="navbar__container__menu__item">
-              <Link
+              <a
+                href={`#${item.to}`}
                 className="navbar__container__menu__item__links"
-                to={item.to}
-                spy={true}
-                smooth={true}
-                duration={500}
+                onClick={handleToggleIcon}
               >
                 {item.label}
-              </Link>
+              </a>
             </li>
           ))}
         </ul>

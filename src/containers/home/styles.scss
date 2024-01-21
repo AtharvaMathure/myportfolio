@@ -12,7 +12,9 @@
         justify-content: center;
 
         h1{
-            color: var(--yellow-theme-main-color);
+            background: linear-gradient(45deg, #ff0000, #0000ff); /* Red to Blue gradient */
+            color: transparent; /* Set text color to transparent */
+            -webkit-background-clip: text;
             margin: 0px;
             font-weight: 500;
             font-size: 7rem;
@@ -27,19 +29,22 @@
         display: flex;
         justify-content: center;
         margin-top: 15px;
+        
 
         button{
             cursor: pointer;
             padding: 10px 70px;
             font-size: 2rem;
-            background: transparent;
-            color: var(--yellow-theme-main-color);
-            border: 1.5px solid var(--yellow-theme-main-color);
-            border-radius: 4px;
+            color: white; /* Set text color to white */
+            border: 1.5px solid transparent; /* Set initial border color to transparent */
+            border-image: linear-gradient(45deg, #ff0000, #0000ff); /* Red to Blue gradient for border */
+            border-image-slice: 1; /* Ensure the entire border is used for the gradient */
+            border-radius: 8px;
             font-weight: 500;
+            background: none;
 
             &:hover{
-                background: var(--yellow-theme-main-color);
+                background: linear-gradient(45deg, #ff0000, #0000ff);
                 color: #000000;
             }
         }
